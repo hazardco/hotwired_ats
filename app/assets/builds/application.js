@@ -9541,6 +9541,12 @@ Please set ${schema_default.reflexSerializeForm}="true" on your Reflex Controlle
   window.Stimulus = application;
   stimulus_reflex_default.initialize(application, { isolate: true });
 
+  // controllers/alert_controller.js
+  var alert_controller_default = class extends Controller {
+    connect() {
+    }
+  };
+
   // controllers/hello_controller.js
   var hello_controller_default = class extends Controller {
     connect() {
@@ -9549,6 +9555,7 @@ Please set ${schema_default.reflexSerializeForm}="true" on your Reflex Controlle
   };
 
   // controllers/index.js
+  application.register("alert", alert_controller_default);
   application.register("hello", hello_controller_default);
 
   // channels/consumer.js
